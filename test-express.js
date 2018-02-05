@@ -1,4 +1,5 @@
-'use strict' 
+'ues strict'
+
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
@@ -14,6 +15,12 @@ var data = [
   {id: 1, author: 'Pete Hunt', text: 'This is one comment'},
   {id: 2, author: 'Jordan Walke', text: 'This is *another* comment'}
 ]
+
+app.post('/contact', function (req, res) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.send('succeed')
+})
 
 app.get('/error', function (req, res) {
   res.send(Boom.notFound('Items not found'))
@@ -40,7 +47,7 @@ app.get('/api/react-data', function (req, res) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   
-  let data = [
+  var data = [
     {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
     {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
     {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
@@ -51,6 +58,6 @@ app.get('/api/react-data', function (req, res) {
   res.json(data)
 })
 
-app.listen(3000, function () {
+app.listen(3001, function () {
   console.log('Example app listening on port 3000!')
 })

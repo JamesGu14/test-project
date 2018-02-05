@@ -1,13 +1,22 @@
+// var obj = {
+//   value: [],
+//   'odata.a': 2
+// }
+
+// var a = obj['odata.a']
+// console.log(a)
+
+
 /**
  * 闭包
  */
-for (var i = 0; i < 10; i++) {
-  (function (arg) {
-    setTimeout(function () {
-      console.log('i = ', arg)
-    }, 1000)
-  })(i)
-}
+// for (var i = 0; i < 10; i++) {
+//   (function (arg) {
+//     setTimeout(function () {
+//       console.log('i = ', arg)
+//     }, 1000)
+//   })(i)
+// }
 
 // (function (a, b) {
 //   console.log(a+ b)
@@ -53,3 +62,20 @@ for (var i = 0; i < 10; i++) {
 // var bar = foo(age) // bar 现在是一个引用了age的闭包
 // bar(10)
 // bar(10)
+
+function A () {
+
+  var list = []
+
+  for (var i = 0; i < 5; i++) 
+  {
+    list.push(function () {
+      console.log(i)
+    })
+  }
+
+  return list
+}
+
+// A()[0]()
+// A()[3]()
