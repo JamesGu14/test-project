@@ -14,13 +14,13 @@ function add([SINGLEITEM]) {
     .returning('*')
 }
 
-function update(id, [SINGLEITEM]) {
+function updateById(id, [SINGLEITEM]) {
   return knex('[TABLENAME]').update([SINGLEITEM])
     .where({ id: parseInt(id) })
     .returning('*')
 }
 
-function delete(id) {
+function deleteById(id) {
   return knex('[TABLENAME]').del()
     .where({ id: parseInt(id) })
     .returning('*')
@@ -30,6 +30,6 @@ module.exports = {
   getAll,
   getById,
   add,
-  update,
-  delete,
+  updateById,
+  deleteById,
 }

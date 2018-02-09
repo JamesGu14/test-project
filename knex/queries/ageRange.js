@@ -14,13 +14,13 @@ function add(ageRange) {
     .returning('*')
 }
 
-function update(id, ageRange) {
+function updateById(id, ageRange) {
   return knex('AgeRange').update(ageRange)
     .where({ id: parseInt(id) })
     .returning('*')
 }
 
-function delete(id) {
+function deleteById(id) {
   return knex('AgeRange').del()
     .where({ id: parseInt(id) })
     .returning('*')
@@ -30,6 +30,6 @@ module.exports = {
   getAll,
   getById,
   add,
-  update,
-  delete,
+  updateById,
+  deleteById,
 }

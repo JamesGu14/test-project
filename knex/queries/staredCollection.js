@@ -14,13 +14,13 @@ function add(staredCollection) {
     .returning('*')
 }
 
-function update(id, staredCollection) {
+function updateById(id, staredCollection) {
   return knex('StaredCollection').update(staredCollection)
     .where({ id: parseInt(id) })
     .returning('*')
 }
 
-function delete(id) {
+function deleteById(id) {
   return knex('StaredCollection').del()
     .where({ id: parseInt(id) })
     .returning('*')
@@ -30,6 +30,6 @@ module.exports = {
   getAll,
   getById,
   add,
-  update,
-  delete,
+  updateById,
+  deleteById,
 }

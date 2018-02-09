@@ -14,13 +14,13 @@ function add(province) {
     .returning('*')
 }
 
-function update(id, province) {
+function updateById(id, province) {
   return knex('Province').update(province)
     .where({ id: parseInt(id) })
     .returning('*')
 }
 
-function delete(id) {
+function deleteById(id) {
   return knex('Province').del()
     .where({ id: parseInt(id) })
     .returning('*')
@@ -30,6 +30,6 @@ module.exports = {
   getAll,
   getById,
   add,
-  update,
-  delete,
+  updateById,
+  deleteById,
 }

@@ -14,13 +14,13 @@ function add(videoListSuitable) {
     .returning('*')
 }
 
-function update(id, videoListSuitable) {
+function updateById(id, videoListSuitable) {
   return knex('VideoListSuitable').update(videoListSuitable)
     .where({ id: parseInt(id) })
     .returning('*')
 }
 
-function delete(id) {
+function deleteById(id) {
   return knex('VideoListSuitable').del()
     .where({ id: parseInt(id) })
     .returning('*')
@@ -30,6 +30,6 @@ module.exports = {
   getAll,
   getById,
   add,
-  update,
-  delete,
+  updateById,
+  deleteById,
 }

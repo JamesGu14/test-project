@@ -14,13 +14,13 @@ function add(playHistory) {
     .returning('*')
 }
 
-function update(id, playHistory) {
+function updateById(id, playHistory) {
   return knex('PlayHistory').update(playHistory)
     .where({ id: parseInt(id) })
     .returning('*')
 }
 
-function delete(id) {
+function deleteById(id) {
   return knex('PlayHistory').del()
     .where({ id: parseInt(id) })
     .returning('*')
@@ -30,6 +30,6 @@ module.exports = {
   getAll,
   getById,
   add,
-  update,
-  delete,
+  updateById,
+  deleteById,
 }
