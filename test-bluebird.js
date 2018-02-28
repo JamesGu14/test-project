@@ -11,14 +11,25 @@ function funcA(a, b) {
 }
 
 function funcB(b) {
-  return new Promise(function(resolve, reject) {
-    if (b > 1) {
-      resolve(b)
-    } 
-    reject('funcB failed')
+  return new Promise((resolve, reject) => {
+    if (b != 100) {
+      setTimeout(function() {
+        console.log('funcB execute')
+        resolve()
+      }, 500)
+    }
+    else {
+      reject()
+    }
   })
 }
 
-funcA(2, 1).then(b => funcB(b)).catch(err => {
+function funcC() {
+  console.log('funcC execute')
+}
+
+
+
+funcA(2, 1).then(b => funcB(b)).then(funcC()).catch(err => {
   console.log(err)
 })
