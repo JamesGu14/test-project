@@ -9,12 +9,15 @@
   "author": "James Gu",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.0.0",
+    "async": "^2.6.0",
+    "audiobuffer-to-wav": "^1.0.0",
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
     "boom": "^3.2.2",
     "express": "^4.14.0",
+    "fluent-ffmpeg": "^2.1.2",
     "hapi": "^14.0.0",
+    "isexe": "^2.0.0",
     "joi": "^8.4.2",
     "jwt-simple": "^0.5.0",
     "knex": "^0.14.2",
@@ -24,8 +27,10 @@
     "mysql2": "^1.5.1",
     "node-fetch": "^1.6.3",
     "object-assign": "^4.1.0",
+    "pcm-util": "^3.0.0",
     "pinyin": "^2.8.3",
     "request": "^2.83.0",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "xhr": "^2.4.1"
   }
 }
