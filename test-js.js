@@ -1,6 +1,7 @@
 'use strict';
 
-console.log([] + {});
-console.log({} + []);
-console.log([] - {});
-console.log({} - []);
+console.log("first");
+setImmediate(function(){
+    console.log("second");
+}, 2000);
+console.log("third");
